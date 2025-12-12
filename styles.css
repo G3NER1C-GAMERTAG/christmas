@@ -1,13 +1,14 @@
 body {
+    margin: 0; /* remove default gap so hero can touch top */
     color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: cursive;
     background: color;
     text-align: center;
-    background-color: rgb(0, 122, 0);
+    background: linear-gradient(90deg, #ff0000 25%, rgb(126, 0, 0) 65%);
 }
 
 .nav-container {
-    background-color: white;
+    background: linear-gradient(90deg, #ff0000 25%, rgb(126, 0, 0) 65%);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -15,20 +16,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1900px;
     margin: 0 auto;
-    border-radius: 50px;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background-color: rgb(190, 0, 0);
+    background-color: rgb(255, 0, 0);
     text-decoration: none;
     font-size: 30px;
     padding: 0.5rem 1rem;
-    border-radius: 1000px;
     transition: all 0.3s ease;
     font-variant: small-caps;
     color: white;
@@ -42,11 +41,10 @@ body {
 }
 
 .nav-menu a {
-    background-color: rgb(190, 0, 0);
+    background-color: rgb(126, 0, 0);
     color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: 50px;
     transition: all 0.3s ease;
     font-weight: bold;
 }
@@ -59,9 +57,61 @@ body {
     font-weight: bold;
 }
 
+
+
+.hero-content {
+    position: absolute; /* position over the image */
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* perfectly center */
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    width: 90%;
+    padding: 1rem 1.25rem;
+    margin: 0;
+    pointer-events: none; /* allow clicks to pass through if needed */
+}
+
+.hero-content h1 {
+    margin: 0;
+    font-size: clamp(1.5rem, 4.5vw, 3.5rem);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.75);
+    text-align: left;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+}
+
+.hero-image {
+    width: 100%;
+    height: 89.91vh; /* visible hero height */
+    position: relative;
+    margin: 0; /* ensure no gap above */
+    overflow: hidden;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center; /* perfectly center the image */
+    margin: 0 auto;
+}
+
 .final {
-    background-color: white;
-    color: black;
+    background: linear-gradient(90deg, rgb(126, 0, 0) 25%, rgb(255, 0, 0) 65%);
+    color: rgb(255, 255, 255);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -69,39 +119,9 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 15px;
-}
-
-.one {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background-color: rgb(190, 0, 0);
-    text-decoration: none;
-    font-size: 10px;
-    padding: 0.5rem 1rem;
-    border-radius: 1000px;
-    transition: all 0.3s ease;
-    font-variant: small-caps;
-    color: white;
-    font-weight: bolder;
-}
-
-.two {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background-color: rgb(190, 0, 0);
-    text-decoration: none;
-    font-size: 10px;
-    padding: 0.5rem 1rem;
-    border-radius: 1000px;
-    transition: all 0.3s ease;
-    font-variant: small-caps;
-    color: white;
-    font-weight: bolder;
+    max-width: 1900px;
+    margin: 50px auto;
+    margin-bottom: 0px;
 }
 
 .category-grid {
@@ -113,11 +133,12 @@ body {
 
 .item-card {
     background-color: rgb(190, 0, 0);
-    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: all 0.3s ease;
     border: 3px solid black;
+    padding-left: 30px;
+    padding-right: 30px;
     
 }
 
@@ -150,10 +171,6 @@ body {
     
 }
 
-span {
-    font-family: wingdings;
-}
-
 .cards-section {
     padding: 4rem 0;
     background-color: lightgray;
@@ -163,21 +180,19 @@ span {
     text-align: center;
     font-size: 4.5rem;
     color: rgb(255, 255, 255);
-    margin-bottom: 3rem;
     font-weight: bold;
-    font-family: fantasy;
     font-variant: small-caps;
+    background: linear-gradient(90deg, rgb(126, 0, 0) 25%, rgb(255, 0, 0) 65%);
+    border: 5px solid black;
+    padding: 1rem 2rem;
+    margin-top: 0;
+    margin-bottom: 50px;
 }
 
 .cards-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-}
-
-.snoochie {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: rgb(0, 255, 0);
 }
 
 @media (min-width: 600px) {
@@ -192,7 +207,7 @@ span {
     }
 }
 
-@media (min-width: 1900px) {
+@media (min-width: 1700px) {
     .category-grid {
         grid-template-columns: repeat(4, 1fr);
     }
